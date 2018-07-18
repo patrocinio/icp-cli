@@ -14,5 +14,11 @@ RUN curl -L https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64 > IB
 RUN tar xzvf IBM_Cloud_CLI_0.8.0_amd64.tar.gz
 RUN cd Bluemix_CLI && ./install_bluemix_cli
 
+# Install ICP CLI
+COPY icp-cli/plugin/icp-linux-amd64 /
+RUN bx plugin install /icp-linux-amd64
+
+# Copy helper script
+COPY icp-cli/configureHelmCLI.sh /
 
 CMD ["bash"]
