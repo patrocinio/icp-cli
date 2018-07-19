@@ -19,9 +19,10 @@ COPY icp-cli/plugin/icp-linux-amd64 /
 RUN bx plugin install /icp-linux-amd64
 
 # Install helm
-RUN curl -L https://storage.googleapis.com/kubernetes-helm/helm-v2.10.0-rc.1-linux-amd64.tar.gz -o helm-v2.10.0-rc.1-linux-amd64.tar.gz
-RUN tar xzvf helm-v2.10.0-rc.1-linux-amd64.tar.gz
-RUN cp linux-amd64/helm /usr/local/bin
+RUN curl -L https://storage.googleapis.com/kubernetes-helm/helm-v2.7.2-linux-amd64.tar.gz -o helm-v2.7.2-linux-amd64.tar.gz
+RUN tar xzvf helm-v2.7.2-linux-amd64.tar.gz
+
+RUN mv  linux-amd64/helm /usr/local/bin
 
 # Copy helper script
 COPY icp-cli/configureHelmCLI.sh /

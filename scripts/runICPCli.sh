@@ -1,2 +1,2 @@
-docker run -it patrocinio/icp-cli
+docker run -it patrocinio/icp-cli:latest
 
